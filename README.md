@@ -60,3 +60,25 @@ Es un framework seguro por defecto, haciendo que se tenga SSL por defecto. Adem�
 
 https://husobee.github.io/golang/rest/grpc/2016/05/28/golang-rest-v-grpc.html
 
+
+## Unary API
+
+Este tipo de API supone una basada en petición/respuesta, de forma que el cliente envía una peticicón al servidor y este le responde con una respuesta. 
+
+Son muy útiles cuando los datos a trasnmitir son pequeños. Se suele empezar con este tipo de APIs y se evolucionan a streaming cuando el rendimiento supone un problema. 
+
+
+ ### Scripts
+
+Variables de entorno necesarias:
+```bash
+export GOBIN=$GOPATH/bin
+export PATH=$PATH:$GOBIN
+```
+
+
+ Generar código en Go a partir de un protocol buffer (.proto): 
+ ```bash
+$ protoc -I . greet/greetpb/greet.proto --go_out=plugins=grpc:.
+ ```
+
